@@ -14,6 +14,8 @@ class Produk {
         $this->penerbit = $penerbit;
         $this->harga = $harga;
 
+        
+
     }
 
 
