@@ -1,8 +1,19 @@
 <?php 
 
 class Produk {
-    public $judul, $penulis, $penerbit, $harga;
+    private $judul, 
+        $penulis, 
+        $penerbit, 
+        $harga;
 
+    public function getJudul(){
+        return $this->judul;
+    }
+
+    public function setJudul($judul){
+        $this->judul = $judul;
+    }
+    
     public function __construct ($judul = 'judul', $penulis = 'penulis',
     $penerbit= 'penerbit', $harga = '0'){
 
@@ -13,6 +24,8 @@ class Produk {
         $this->harga = $harga;
 
     }
+
+    
     public function getLabel (){
         return "$this->judul, $this->penulis, $this->penerbit, $this->harga";
     }
@@ -51,7 +64,7 @@ class Game extends Produk{
     public $waktumain;
     
     public function __construct ($judul = 'judul', $penulis = 'penulis',
-    $penerbit = 'penerbit', $harga = 0, $waktumain = 3) {
+    $penerbit = 'penerbit', $harga = 0, $waktumain = 5) {
             //$this->judul = $judul;
             //$this->penulis = $penulis;
             //$this->penerbit = $penerbit;
@@ -77,10 +90,10 @@ class Game extends Produk{
         }
     }
 
-$produk1 = new Komik ("One Piece", "Paman Jamal", "Erlangga", 10000);
-$produk2 = new Game ("Uncharted", "Noll", "Pustaka Ilmu", 50000);
-$produk3 = new Produk("Doraemon", "Zahid", "Iri Suaka", 60000);
-$produk4 = new Produk();
+    $produk1 = new Komik("Naruto", "Masashi Nishimoto", "Erlangga", 10000, 150);
+    $produk2 = new Game("Uncharted", "Noll", "Pustaka Ilmu", 50000, 50);
+    $produk3 = new Produk("Doraemon", "Zahid", "Iri Suaka", 60000);
+    $produk4 = new Produk();
 
 echo $produk1->getInfoProduk();
 echo "<br>";
@@ -88,9 +101,12 @@ echo $produk2->getInfoProduk();
 echo "<br>";
 echo $produk3->getInfoProduk();
 echo "<br>";
-echo $produk4->getInfoProduk();
-echo "<br>";
 
+
+$produk1->setJudul("Dragon Ball");
+$produk1->judul = "Shincan";
+
+echo $produk1->getJudul();
 
 //$infoproduk = new CetakInfoProduk();
 //echo $infoproduk->cetak($produk1);
