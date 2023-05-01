@@ -1,6 +1,10 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -8,23 +12,27 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
+//menggunakan clossure
 Route::get('/about', function () {
     return view('about',[
-        "name" => "zahid",
+        "title" => "About",
+        "name" => "rere",
         "email" => "zahidsmf4@gmail.com",
         "image" => "hahaha.jpg"
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('posts');
-}); 
+//menggunakan controller
+Route::get('/blog', [PostController::class, 'index']);
+Route::get('/posts/{slug}', [PostController::class, 'show']);
