@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Models;
+
+
+
+class post 
+{
+   private static $blog_posts = [
+    [
+        "title" => "Judul Post Pertama",
+        "slug" => "judul-post-pertama",
+        "author" => "Zahid",
+        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate deserunt ullam commodi ex! Impedit, quaerat placeat adipisci explicabo qui ad tempora molestias beatae voluptatem hic eveniet pariatur perferendis nisi sequi nihil est earum? Aperiam repellat modi cum error debitis numquam a accusantium eius dignissimos iste? Cupiditate molestiae labore accusamus quos rerum ullam eius, hic quas nostrum eveniet, corporis dolores facilis rem. Deserunt officia corrupti, sequi veniam earum sint incidunt dicta sed quas voluptatibus, ad recusandae alias numquam quasi!"
+    ],
+    [
+        "title" => "Judul Post Kedua",
+        "slug" => "judul-post-kedua",
+        "author" => "Zahid",
+        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil tenetur aliquam mollitia, dignissimos nostrum aspernatur dolorem sint. Atque maiores possimus praesentium assumenda earum quod maxime iusto porro quas consectetur doloremque, ducimus repellat animi eligendi sed in officiis, illum architecto corrupti. Accusantium perferendis tempore numquam? Reprehenderit quia aperiam eligendi suscipit blanditiis, dicta in, est ratione ex aut perspiciatis soluta a ipsam autem tenetur perferendis quidem veritatis sapiente hic tempore. Eveniet eius nemo eaque, tempora at cupiditate reprehenderit similique blanditiis, ipsam veniam maiores iste asperiores fugit deleniti tempore assumenda reiciendis delectus dolore facilis dignissimos? Iure molestiae incidunt iste est omnis molestias harum!"
+    ]
+    ];
+
+    public static function all()
+    {
+        return collect (self::$blog_posts);
+    }
+
+    public static function find($slug)
+    {
+        $posts = static::all();
+       // $post = [];
+        //foreach($posts as $p) {
+           // if ($p["slug"] == $slug) {
+              //  $post = $p;
+
+              return $posts->firstWhere('slug', $slug);
+
+            }
+        }
+
+        

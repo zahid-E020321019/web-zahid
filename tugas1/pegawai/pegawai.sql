@@ -40,7 +40,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `nama`, `nip`, `no_hp`, `email`) VALUES
-(1, ' Fitriah', 'fitriahi@gmail.com', 'fitriahid5@gmail.com', 'fitriahid5@gmail.com');
+(1, ' Zahid', 'zahidsmf4@gmail.com', 'zahidsmf4@gmail.com', 'zahidsmf4@gmail.com');
 
 --
 -- Indexes for dumped tables
