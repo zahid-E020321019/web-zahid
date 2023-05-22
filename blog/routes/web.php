@@ -28,7 +28,7 @@ Route::get('/about', function () {
         "title" => "About",
         "name" => "zahid",
         "email" => "zahidsmf4@gmail.com",
-        "image" => "hahaha.jpg"
+        "image" => "heddd.jpg"
     ]);
 });
 
